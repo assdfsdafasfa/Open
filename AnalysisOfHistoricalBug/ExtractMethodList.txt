@@ -1,0 +1,212 @@
+https://youtrack.jetbrains.com/issue/IDEA-344558/Extracting-Method-function-makes-result-final-breaking-code
+https://youtrack.jetbrains.com/issue/IDEA-331198/Exception-upon-Extract-method-on-String-template
+https://youtrack.jetbrains.com/issue/IDEA-313664/Extract-method-does-not-make-the-method-static-inside-non-static-anonymous-classes-since-Java-16
+https://youtrack.jetbrains.com/issue/IDEA-313666/Extract-method-name-suggestions-rank-return-variable-based-suggestions-higher
+https://youtrack.jetbrains.com/issue/IDEA-179874/Alternative-way-to-extract-method-object
+https://youtrack.jetbrains.com/issue/IDEA-122014/Extract-method-duplicates-analysis-fails-in-case-of-inner-classes
+https://youtrack.jetbrains.com/issue/IDEA-106017/Refactoring-Extract-class-breaks-existing-usages
+https://youtrack.jetbrains.com/issue/IDEA-125259/Extract-method-removes-generic-casts
+https://youtrack.jetbrains.com/issue/IDEA-139149/Extract-method-dialog-on-mac-Ok-button-is-not-activated-by-filling-method-name
+https://youtrack.jetbrains.com/issue/IDEA-139615/Extract-Interface-doesnt-handle-multiple-type-parameters-creates-broken-code
+https://youtrack.jetbrains.com/issue/IDEA-139292/Extract-method-refactoring-in-local-anonymous-class-introduces-unnecessary-parameter
+https://youtrack.jetbrains.com/issue/IDEA-126776/Process-duplicates-after-extract-method
+IDEA-140553 "Invert boolean" method displays a warning when preserving the name
+IDEA-141562 Extract method does not generate required parameter
+IDEA-127338 Extract method doesn't work for some if conditions
+IDEA-112311 Java: Extract method erroneously insert extra declarations
+IDEA-142163 Extract method failure in Java8 lambda
+IDEA-90106 Extract Method does not offer Supertypes for parameters
+IDEA-91087 Process Duplicates after Extract Method works incorrectly on anonymous class with non-void method
+IDEA-142672
+ IOE breaks 'Extract Method' refactoring
+IDEA-112570
+ Extract Method from statement lambda does not take parameters from enclosing scope
+IDEA-91345
+ JDK 1.8: Extract Method Refactoring doesn't create parameters from lambda parameters
+IDEA-91738
+ Extract method: Insert @NotNull/@Nullable whenever possible
+IDEA-114102
+ Extract method: better automatic name suggestion basing on comment before
+IDEA-114292
+ Extract method: The option to set up the default visibility
+IDEA-92815
+ Extract method refactoring with "Fold parameters" is too clever - breaks functioning code
+IDEA-144277
+ 'Extract Method' refactoring fails with exception while processing duplicates if the code contains anonymous class
+IDEA-144938
+ Extract method adds redundant exception in throws section in case of lambda
+IDEA-91985
+ Extract method does not work when a comment is selected at the end of the statements
+IDEA-95696
+ Extract method doesn't work if expression is under cursor but is not selected
+IDEA-146250
+ Refactoring variable out of lambda expression places variable outside of the lambda
+IDEA-125510
+ Extract refactoring doesn't work for standalone method reference
+IDEA-146332
+ Extract method produces invalid code
+IDEA-132706
+ Extract method incorrectly replaces break with return
+IDEA-133095
+ Extract method refactoring produces incorrect code
+IDEA-146826
+ IU 143.379.11 - Extract method: too small field for method name
+IDEA-96772
+ Undo 'Extract method' before 'Process duplicates' dialog is shown
+IDEA-122180
+ Refactor -> Extract Method fails silently if missing part of line selection
+IDEA-120974
+ Extract method suggests unnecessary parameter
+IDEA-97253
+ Extract method refactoring forgets to add 'final' modifier to parameter
+IDEA-98396
+ Extract method: insert casts in duplicated usages
+IDEA-98365
+ Extract method object refactoring fails on the following code
+IDEA-98515
+ Java extract method refactoring confused by line order when searching for duplicates
+IDEA-134635
+ "Extract Method" refactoring creates private methods in interfaces
+IDEA-134636
+ "Extract Method" refactoring creates methods with modifiers `static default` from default methods
+IDEA-152334
+ Refactor/Extract/Method leads to "Variable [...] is already defined in the scope"
+IDEA-119223
+ Extract Method Refactoring onRefactoringStarted does not contain any data
+IDEA-134904
+ extract method dialog omits parameters on negated parenthesized boolean expression
+IDEA-87320
+ Extract Method creates conflicting local variable
+IDEA-135560
+ Extract Method on Lambdas should support Java 8 Method References
+IDEA-134635"Extract Method" refactoring creates private methods in interfaces
+IDEA-134636
+ "Extract Method" refactoring creates methods with modifiers `static default` from default methods
+IDEA-152334
+ Refactor/Extract/Method leads to "Variable [...] is already defined in the scope"
+IDEA-119223
+ Extract Method Refactoring onRefactoringStarted does not contain any data
+IDEA-148495
+ Extract Interface doesn't give the option to extract static methods in Java 8
+IDEA-152851
+ Extract Method Object: incompilable result in case of `this` and `super` and anonymous class creation
+IDEA-87654
+ Extract method fails to detect input variable if code fragment is located in unreachable else branch
+IDEA-155094
+ Refactor Extract Method extracts unused variables
+IDEA-155518
+ Extract method leaves fully qualified name
+IDEA-128383
+ 30+ sec freeze when running "extract method" refactoring in Java
+IDEA-35877
+ Extract Method: incorrect parameter used
+IDEA-89800
+IDEA-89980
+IDEA-98288
+IDEA-98290
+IDEA-79841
+IDEA-97777
+IDEA-108186
+IDEA-120076
+IDEA-108664
+IDEA-108047
+IDEA-112230
+IDEA-108296
+IDEA-36316
+IDEA-114278
+IDEA-79743
+IDEA-93737
+IDEA-80000
+IDEA-79995
+IDEA-54488
+IDEA-54490
+IDEA-52452
+IDEA-54953
+IDEA-53348
+IDEA-66099
+IDEA-66166
+IDEA-66164
+IDEA-67390
+IDEA-67397
+IDEA-58456
+IDEA-70376
+IDEA-56807
+IDEA-44896
+IDEA-44945
+IDEA-44944
+IDEA-44892
+IDEA-44925
+IDEA-44895
+IDEA-44838
+IDEA-48495
+IDEA-45495
+IDEA-45541
+IDEA-45540
+IDEA-40156
+IDEA-45452
+IDEA-26836
+IDEA-46542
+IDEA-37665
+IDEA-37659
+IDEA-47488
+IDEA-47133
+IDEA-52020
+IDEA-46852
+IDEA-36456
+IDEA-36342
+IDEA-46582
+IDEA-27180
+IDEA-51711
+IDEA-35798
+IDEA-46210
+IDEA-46053
+IDEA-26124
+IDEA-45880
+IDEA-35321
+IDEA-35296
+IDEA-45139
+IDEA-44870
+IDEA-44795
+IDEA-50012
+IDEA-33076
+IDEA-48478
+IDEA-42770
+IDEA-32537
+IDEA-42332
+IDEA-32216
+IDEA-31655
+IDEA-31652
+IDEA-31109
+IDEA-40719
+IDEA-30941
+IDEA-40584
+IDEA-40363
+IDEA-30158
+IDEA-29936
+IDEA-76767
+IDEA-28626
+IDEA-28568
+IDEA-28077
+IDEA-61942
+IDEA-74975
+IDEA-75930
+IDEA-74057
+IDEA-27384
+IDEA-27787
+IDEA-28077
+
+eclipse:
+64245
+562668
+48056
+58648
+143616
+159438
+225716
+318448
+318560	
+369474
+388013
+393734
+78986
+570785
