@@ -5,7 +5,7 @@ trigger bugs to guide the generation of test cases. Program engineering thorough
 build the generator of ChatGPT’s prompt input. Finally, we utilize differential testing techniques based on generated test cases to identify bugs in widely used refactoring engines. The result shows
 that our study discovered 113 bugs and 28 inconsistent refactoring behaviors in four refactoring engines, with 53 bugs confirmed by maintainers. 
 
-We provide a [Bug Repository](https://github.com/username) that contains all details (test case code before and after refactoring, error reasons, expected results).
+We provide a [Bug Repository](https://github.com/assdfsdafasfa/OpenPaper/blob/main/Web/main.html) that contains all details (test case code before and after refactoring, error reasons, expected results).
 # Prompt Design
 **One-Step Prompt Engineering:** Evaluating the potential of directly leveraging ChatGPT to generate test cases for testing refactoring tools.
 
@@ -29,4 +29,4 @@ To answer RQ2, we examine the phenomenon of bug duplication in refactoring engin
 
 To answer RQ3, we explore three prompts to investigate the efficacy of ChatGPT in producing test cases that assess the refactoring engine’s inconsistent behaviors.
 
-To answer RQ4, RQ5 and RQ6, We provide test cases for all bugs and inconsistent behaviors found, For details, please see [Bug Repository](https://github.com/username)
+To answer RQ4, RQ5 and RQ6, We provide test cases for all bugs and inconsistent behaviors found, For details, please see [Bug Repository](https://github.com/assdfsdafasfa/OpenPaper/blob/main/Web/main.html)
