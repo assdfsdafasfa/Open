@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Refactoring engine bugs</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* body 样式 */
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+/* 标题 */
+.header {
+    padding: 15px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+}
+
+/* 标题字体加大 */
+.header h1 {
+    font-size: 40px;
+}
+
+/* 导航 */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* 导航栏样式 */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* 右侧链接*/
+.navbar a.right {
+    float: right;
+}
+
+/* 鼠标移动到链接的颜色 */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* 列容器 */
+.row {  
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+}
+
+/* 创建两个列 */
+/* 边栏 */
+.side {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    background-color: #adadad;
+    padding: 20px;
+}
+
+/* 主要的内容区域 */
+.main {   
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    background-color:#bebebe;
+    padding: 20px;
+}
+
+.med {   
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    background-color: #d0d0d0;
+    padding: 20px;
+}
+
+.right {   
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    background-color: #dddd;
+    padding: 20px;
+}
+
+/* 测试图片 */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+/* 底部 */
+.footer {
+    padding: 5px;
+    text-align: Left;
+    background: #f1f1f1;
+}
+
+/* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
+@media screen and (max-width: 700px) {
+    .row {   
+        flex-direction: column;
+    }
+}
+
+/* 响应式布局 - 在屏幕设备宽度尺寸小于 400px 时, 让导航栏目上下堆叠显示 */
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Display Examples of Refactoring Engine Bugs</h1>
+</div>
+
+<div class="navbar">
+  <a href="main">Last</a>
+  <a href="main">Next</a>
+  <a href="main">Home</a>
+</div>
+<div class="row">
+  <div class="column"></div>
+  <div class="column"></div>
+  <div class="column"></div>
+  <div class="column"></div>
+</div>
+<div class="row">
+  <div class="side">
+      <h2>IntelliJ IDEA-27 Bugs</h2>
+  <h3>  <a href="IDEA/RenameMethod/1.html">Rename Method -5 Bugs</a></h3>
+  <h3>  <a href="IDEA/RenameField/1.html">Rename Field -2 Bugs</a></h3>
+  <h3>  <a href="IDEA/RenameVariable/1.html">Rename Local Variable -4 Bugs</a></h3>
+  <h3>  <a href="IDEA/MoveMethod/1.html">Move Method -7 Bugs</a></h3>
+  <h3>  <a href="IDEA/InlineMethod/1.html">Inline Method -2 Bugs</a></h3>
+  <h3>  <a href="IDEA/ExtractMethod/1.html">Extract Method -2 Bugs</a></h3>
+  <h3>  <a href="IDEA/ExtractVariable/1.html">Extract Local Variable -5 Bugs</a></h3>
+  </div>
+  <div class="main">
+<h2>Eclipse-19 Bugs</h2>
+  <h3>  <a href="Eclipse/RenameMethod/1.html">Rename Method -3 Bugs</a></h3>
+  <h3>  <a href="Eclipse/RenameField/1.html">Rename Field -1 Bug</a></h3>
+  <h3>  <a href="Eclipse/RenameVariable/1.html">Rename Local Variable -0 Bugs</a></h3>
+  <h3>  <a href="Eclipse/MoveMethod/1.html">Move Method -9 Bugs</a></h3>
+  <h3>  <a href="Eclipse/InlineMethod/1.html">Inline Method -3 Bugs</a></h3>
+  <h3>  <a href="Eclipse/ExtractMethod/1.html">Extract Method -3 Bugs</a></h3>
+  <h3>  <a href="Eclipse/ExtractVariable/1.html">Extract Local Variable -0 Bugs</a></h3>
+  </div>
+ <div class="med">
+  <h2>VScode-38 bugs</h2>
+	<h3>  <a href="VScode/RenameMethod/1.html">Rename Method -9 Bugs</a></h3>
+  <h3>  <a href="VScode/RenameField/1.html">Rename Field -5 Bugs</a></h3>
+  <h3>  <a href="VScode/RenameVariable/1.html">Rename Local Variable -5 Bugs</a></h3>
+  <h3>  <a href="VScode/MoveMethod/1.html">Move Method -5 Bugs</a></h3>
+  <h3>  <a href="VScode/InlineMethod/1.html">Inline Method -6 Bugs</a></h3>
+  <h3>  <a href="VScode/ExtractMethod/1.html">Extract Method -4 Bugs</a></h3>
+  <h3>  <a href="VScode/ExtractVariable/1.html">Extract Local Variable -4 Bugs</a></h3>
+      <br>
+</div>
+ <div class="right">
+  <h2>  NetBeans-29 bugs</h2>
+  <h3>  <a href="NetBeans/RenameMethod/1.html">Rename Method -6 Bugs</a></h3>
+  <h3>  <a href="NetBeans/RenameField/1.html">Rename Field -2 Bugs</a></h3>
+  <h3>  <a href="NetBeans/RenameVariable/1.html">Rename Local Variable -1 Bug</a></h3>
+  <h3>  <a href="NetBeans/MoveMethod/1.html">Move Method -10 Bugs</a></h3>
+  <h3>  <a href="NetBeans/InlineMethod/1.html">Inline Method -3 Bugs</a></h3>
+  <h3>  <a href="NetBeans/ExtractMethod/1.html">Extract Method -2 Bugs</a></h3>
+  <h3>  <a href="NetBeans/ExtractVariable/1.html">Extract Local Variable -5 Bugs</a></h3>
+</div>
+</div>
+<div class="footer">
+  <h2>Inconsistent Refactoring-There are at least two IDEs that perform different refactoring actions on the same test case.</h2>
+  <h3>  <a href="Inconsistent/RenameMethod/1.html">Rename Method</a></h3>
+  <h3>  <a href="Inconsistent/RenameField/1.html">Rename Field</a></h3>
+  <h3>  <a href="Inconsistent/RenameVariable/1.html">Rename Local Variable</a></h3>
+  <h3>  <a href="Inconsistent/MoveMethod/1.html">Move Method</a></h3>
+  <h3>  <a href="Inconsistent/InlineMethod/1.html">Inline Method</a></h3>
+  <h3>  <a href="Inconsistent/ExtractMethod/1.html">Extract Method</a></h3>
+  <h3>  <a href="Inconsistent/ExtractVariable/1.html">Extract Local Variable</a></h3>
+</div>
+</body>
+</html>
