@@ -5,13 +5,18 @@ trigger bugs to guide the generation of test cases. Program engineering thorough
 build the generator of ChatGPT’s prompt input. Finally, we utilize differential testing techniques based on generated test cases to identify bugs in widely used refactoring engines. The result shows
 that our study discovered 113 bugs and 28 inconsistent refactoring behaviors in four refactoring engines, with 53 bugs confirmed by maintainers. 
 
-We provide a [Bug Repository](https://assdfsdafasfa.github.io/) that contains all details (test case code before and after refactoring, error reasons, expected results).
+We provide a [Bug Repository](https://assdfsdafasfa.github.io/) that contains all details (test case code before and after refactoring, error reasons, expected results). 
+
+Auto-perform refactoring tools in [RefEclipse](https://github.com/assdfsdafasfa/OpenPaper/tree/main/Eclipse_AutoRefactor) and [RefIDEA](https://github.com/assdfsdafasfa/OpenPaper/tree/main/IDEA_AutoRefactor) package.
+Analysis of historical bug in [AnalysisOfHistoricalBug](https://github.com/assdfsdafasfa/OpenPaper/tree/main/AnalysisOfHistoricalBug) package.
 # Prompt Design
 **One-Step Prompt Engineering:** Evaluating the potential of directly leveraging ChatGPT to generate test cases for testing refactoring tools.
 
 **Chain-of-Thought Prompting:** First, utilize ChatGPT's scenario analysis capabilities to analyze all scenarios that may lead to mutation errors or inconsistent behaviors in refactoring, and use ChatGPT to generate test cases based on each scenario.
 
 **Knowledge-Based Prompting:** By analyzing the bugs of historical refactoring tools, we have obtained all the characteristics affecting the refactoring tools and expanded on this to construct a feature list. The prompts for ChatGPT are composed by randomly selecting combinations of features.
+
+ We design the prompt engineering in the  [Prompt](https://github.com/assdfsdafasfa/OpenPaper/tree/main/Prompt) package. 
 # Results
 To evaluate the potential of ChatGPT on the task of testing refactoring tools, we set 6 research questions：
 
