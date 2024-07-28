@@ -1,16 +1,12 @@
 https://youtrack.jetbrains.com/issue/IDEA-344558/Extracting-Method-function-makes-result-final-breaking-code
 https://youtrack.jetbrains.com/issue/IDEA-331198/Exception-upon-Extract-method-on-String-template
 https://youtrack.jetbrains.com/issue/IDEA-313664/Extract-method-does-not-make-the-method-static-inside-non-static-anonymous-classes-since-Java-16
-https://youtrack.jetbrains.com/issue/IDEA-313666/Extract-method-name-suggestions-rank-return-variable-based-suggestions-higher
 https://youtrack.jetbrains.com/issue/IDEA-179874/Alternative-way-to-extract-method-object
 https://youtrack.jetbrains.com/issue/IDEA-122014/Extract-method-duplicates-analysis-fails-in-case-of-inner-classes
-https://youtrack.jetbrains.com/issue/IDEA-106017/Refactoring-Extract-class-breaks-existing-usages
 https://youtrack.jetbrains.com/issue/IDEA-125259/Extract-method-removes-generic-casts
-https://youtrack.jetbrains.com/issue/IDEA-139149/Extract-method-dialog-on-mac-Ok-button-is-not-activated-by-filling-method-name
 https://youtrack.jetbrains.com/issue/IDEA-139615/Extract-Interface-doesnt-handle-multiple-type-parameters-creates-broken-code
 https://youtrack.jetbrains.com/issue/IDEA-139292/Extract-method-refactoring-in-local-anonymous-class-introduces-unnecessary-parameter
 https://youtrack.jetbrains.com/issue/IDEA-126776/Process-duplicates-after-extract-method
-IDEA-140553 "Invert boolean" method displays a warning when preserving the name
 IDEA-141562 Extract method does not generate required parameter
 IDEA-127338 Extract method doesn't work for some if conditions
 IDEA-112311 Java: Extract method erroneously insert extra declarations
