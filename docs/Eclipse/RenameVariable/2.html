@@ -133,11 +133,11 @@ background-color: #333;
 <body>
 
 <div class="header">
-  <h1> Inconsistent Examples of Rename Field  Refactoring</h1>
+  <h1> Bugs of Rename Variable Refactoring --Eclipse </h1>
 </div>
 <div class="navbar">
-  <a href="2.html">Last</a>
-  <a href="1.html">Next</a>
+  <a href="1.html">Last</a>
+  <a href="3.html">Next</a>
   <a href="../../main.html">Home</a>
 </div>
 
@@ -150,28 +150,32 @@ background-color: #333;
 
 <div class="row">
   <div class="side">
-      <h2>List</h2>
-  <h3>  <a href="1.html">1</a></h3>
-  <h3>  <a href="2.html">2</a></h3>
-  <h3>  <a href="3.html">3</a></h3>
+      <h2>Bug List</h2>
+  <h3>  <a href="2.html">1</a> </h3>
   </div>
 
   <div class="main">
 <h2>Before Refactoring Code</h2>
  <br></br>
- <img src="3b.png"  alt="Pulpit rock" width="420" height="300" />
+ <img src="3b.png"  alt="Pulpit rock" width="300" height="200" />
   </div>
  <div class="med">
-  <h2>After Refactoring Result 1</h2>
+  <h2>After Refactoring Code</h2>
  <br></br>
- <img src="3a.png"  alt="Pulpit rock" width="420" height="260" />
+ <img src="3a.png"  alt="Pulpit rock" width="300" height="200" />
       <br>
 </div>
  <div class="right">
-  <h2>After Refactoring Result 2</h2> 
+  <h2>Expected Refactoring Result</h2> 
  <br></br>
- <h3> Another namme will shadow access to the renamed element</h3>
+ <img src="3e.png"  alt="Pulpit rock" width="300" height="200" />
 	      <br>
+</div>
+<div class="footer">
+  <h3>Error Messages: no</h3>
+  <h3>Error Reason Description: </h3>
+<p>When the "variableToBeRenamed" variable is selected for the renamed variable refactoring, it causes a refactoring bug because the new variable name being renamed conflicts with other parameters in the inner class, resulting in a change in code behavior.</p>
+
 </div>
  </div>
 </body>
