@@ -157,27 +157,26 @@ background-color: #333;
   </div>
 
   <div class="main">
-<h2>Before Refactoring Code</h2>
+<h2>Code before refactoring</h2>
  <br></br>
  <img src="4b.png"  alt="Pulpit rock" width="420" height="270" />
   </div>
  <div class="med">
-  <h2>After Refactoring Code</h2>
+  <h2>Code after refactoring</h2>
  <br></br>
  <img src="4a.png"  alt="Pulpit rock" width="420" height="270" />
       <br>
 </div>
  <div class="right">
-  <h2>Expected Refactoring Result</h2> 
+  <h2>Expected results</h2> 
  <br></br>
 <h3>When a local variable is not initialized and the method extraction refactoring includes a local variable as a return value, it should be indicated that the refactoring cannot be performed.</h3>
 	      <br>
 </div>
 <div class="footer">
-  <h3>Error Messages: no</h3>
-  <h3>Error Reason Description: </h3>
-<p>When "switch..return.." statements  are selected for the Extract Method refactoring, setting the new method name to "extracted" causes a refactoring bug, because after performing the Extract Method refactoring, if Inline Method refactoring is continued, the refactored code will not be consistent with the original code, as an extra local variable declaration statement is introduced.</p>
-   <h3></h3>
+  <h3>Error messages provided by the compiler: no</h3>
+  <h3>Explanation: </h3>
+<p>When "switch..return.." statements  are selected for the Extract Method refactoring, setting the new method name to "extracted" causes a refactoring bug, because after performing the Extract Method refactoring, if Inline Method refactoring is continued, the refactored code will not be ​<h3>Issue link: If the paper is accepted, we will provide all issue links (currently anonymous).    </h3>
 </div>
  </div>
 </body>

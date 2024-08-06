@@ -158,26 +158,27 @@ background-color: #333;
   </div>
 
   <div class="main">
-<h2>Before Refactoring Code</h2>
+<h2>Code before refactoring </h2>
  <br></br>
  <img src="5b.png"  alt="Pulpit rock" width="400" height="200" />
   </div>
  <div class="med">
-  <h2>After Refactoring Code</h2>
+  <h2>Code after refactoring </h2>
  <br></br>
  <img src="5a.png"  alt="Pulpit rock" width="400" height="200" />
       <br>
 </div>
  <div class="right">
-  <h2>Expected Refactoring Result</h2> 
+  <h2>Expected results</h2> 
  <br></br>
- <h3>A warning should be given that refactoring is not supported.</h3>
+ <h3>The refactoring engine should provide a warning that there may be changes to method calling relationships.<</h3>
 	      <br>
 </div>
 <div class="footer">
-  <h3>Error Messages: no</h3>
-  <h3>Error Reason Description: </h3>
-<p>When the "methodToBeRenamed" method is selected for the rename method refactoring, it causes a refactoring bug because the new method name being renamed depends on the method being imported, resulting in a change in code behavior.</p>
+  <h3>Error messages provided by the compiler: no</h3>
+  <h3>Explanation: </h3>
+<p>The "methodToBeRenamed()" method is selected to be renamed to ''valueOf()''; Code before refactoring, the body of “methodToBeRenamed()” method calls ‘’valueOf()‘’from the external class; Code after refactoring, The body of "valueOf" method changes to call its own method , and the rename method refactoring has resulted in a change in the method call within the body of "testMethod()" method .</p>
+   <h3>Issue link: If the paper is accepted, we will provide all issue links (currently anonymous).  </h3>
 
 </div>
  </div>

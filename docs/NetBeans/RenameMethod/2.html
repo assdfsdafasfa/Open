@@ -157,28 +157,28 @@ background-color: #333;
   </div>
 
   <div class="main">
-<h2>Before Refactoring Code</h2>
+<h2>Code before refactoring </h2>
  <br></br>
  <img src="2b.png"  alt="Pulpit rock" width="400" height="200" />
   </div>
  <div class="med">
-  <h2>After Refactoring Code</h2>
+  <h2>Code after refactoring </h2>
  <br></br>
  <img src="2a.png"  alt="Pulpit rock" width="400" height="200" />
       <br>
 </div>
  <div class="right">
-  <h2>Expected Refactoring Result</h2> 
+  <h2>Expected results</h2> 
  <br></br>
 <p>Gives an error warning that there may be method overwriting.</p>
 	      <br>
 </div>
 <div class="footer">
-  <h3>Error Messages: </h3>
+ <h3>Error messages provided by the compiler: </h3>
   <p>This static method cannot hide the instance method from Test.</p>
-  <h3>Error Reason Description: </h3>
-<p>When the "methodToBeRenamed" method is selected for the rename method refactoring, it causes a refactoring bug because the new method name being renamed conflicts with another method in the sub class, resulting in a syntax error.</p>
-
+  <h3>Explanation: </h3>
+<p>When the "methodToBeRenamed()" method is selected for the rename method refactoring,code before refactoring, the "methodToBeRenamed()" method in the "ParentClass" is independent of the method in the "SubClass" class; the method in the "SubClass" class becomes inherited from the "ParentClass" class.</p>
+   ​<h3>Issue link: If the paper is accepted, we will provide all issue links (currently anonymous).    </h3>
 </div>
  </div>
 </body>

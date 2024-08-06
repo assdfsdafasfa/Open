@@ -158,26 +158,26 @@ background-color: #333;
   </div>
 
   <div class="main">
-<h2>Before Refactoring Code</h2>
+<h2>Code before refactoring </h2>
  <br></br>
  <img src="1b.png"  alt="Pulpit rock" width="400" height="250" />
   </div>
  <div class="med">
-  <h2>After Refactoring Code</h2>
+  <h2>Code after refactoring</h2>
  <br></br>
  <img src="1a.png"  alt="Pulpit rock" width="400" height="250" />
       <br>
 </div>
  <div class="right">
-  <h2>Expected Refactoring Result</h2> 
+  <h2>Expected results</h2> 
  <br></br>
-<p>Gives an error warning of possible invoking relationship changes.</p>
+<p>The refactoring engine should provide a warning that there may be changes to method calling relationships.</p>
 	      <br>
 </div>
 <div class="footer">
-  <h3>Error Messages: no</h3>
-  <h3>Error Reason Description: </h3>
-<p>When the "methodToBeRenamed" method is selected for the rename method refactoring, it causes a refactoring bug because the new method name being renamed conflicts with other methods in the parent class, resulting in a change in code behavior.</p>
+  <h3>Error messages provided by the compiler: no</h3>
+  <h3>Explanation: </h3>
+<p>The "methodToBeRenamed()" method is selected to be renamed to ''method()''; Code before refactoring, the body of “testMethod()” method  calls ‘’method()‘’ in the ParentClass class ; Code after refactoring, the "method()" in the SubClass class is called in the body of "testMethod()" method , and the rename method refactoring has resulted in a change in the method call within the body of "testMethod()" method .</p>
    <h3>Issue link: If the paper is accepted, we will provide all issue links (currently anonymous).  </h3>
 </div>
  </div>

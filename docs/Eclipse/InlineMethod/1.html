@@ -157,26 +157,26 @@ background-color: #333;
   </div>
 
   <div class="main">
-<h2>Before Refactoring Code</h2>
+<h2>Code before refactoring</h2>
  <br></br>
  <img src="1b.png"  alt="Pulpit rock" width="400" height="200" />
   </div>
  <div class="med">
-  <h2>After Refactoring Code</h2>
+  <h2>Code after refactoring</h2>
  <br></br>
  <img src="1a.png"  alt="Pulpit rock" width="400" height="220" />
       <br>
 </div>
  <div class="right">
-  <h2>Expected Refactoring Result</h2> 
+  <h2>Expected results</h2> 
  <br></br>
  <img src="1e.png"  alt="Pulpit rock" width="400" height="220" />
 	      <br>
 </div>
 <div class="footer">
-  <h3>Error Messages:</h3>
+  <h3>Error messages provided by the compiler:</h3>
 <p> The field SourceClass.value is not visible.</p>
-  <h3>Error Reason Description: </h3>
+  <h3>Explanation: </h3>
 <p>When the "methodToBeInlined()" method is selected for the Inline method refactoring, it causes a refactoring bug because method being inlined called a private field in another class, resulting in a syntax error.</p>
    <h3>Issue link: If the paper is accepted, we will provide all issue links (currently anonymous). </h3>
 </div>

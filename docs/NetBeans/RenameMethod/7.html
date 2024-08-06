@@ -133,11 +133,11 @@ background-color: #333;
 <body>
 
 <div class="header">
-  <h1> Bugs of Move Method Refactoring --Eclipse </h1>
+  <h1> Bugs of Rename Method Refactoring --VScode </h1>
 </div>
 <div class="navbar">
-  <a href="3.html">Last</a>
-  <a href="5.html">Next</a>
+  <a href="7.html">Last</a>
+  <a href="1.html">Next</a>
   <a href="../../main.html">Home</a>
 </div>
 
@@ -151,36 +151,35 @@ background-color: #333;
 <div class="row">
   <div class="side">
       <h2>Bug List</h2>
-  <h3>  <a href="1.html">1</a> &nbsp &nbsp &nbsp<a href="6.html">6</a></h3>
-  <h3>  <a href="2.html">2</a> &nbsp &nbsp &nbsp<a href="7.html">7</a></h3>
- <h3>   <a href="3.html">3</a> &nbsp &nbsp &nbsp<a href="8.html">8</a></h3>
- <h3>   <a href="4.html">4</a> &nbsp &nbsp &nbsp<a href="9.html">9</a></h3>
- <h3>   <a href="5.html">5</a> </h3>
+  <h3>  <a href="1.html">1</a> &nbsp &nbsp &nbsp<a href="5.html">5</a></h3>
+  <h3>  <a href="2.html">2</a> &nbsp &nbsp &nbsp<a href="6.html">6</a></h3>
+ <h3>   <a href="3.html">3</a> &nbsp &nbsp &nbsp<a href="7.html">7</a></h3>
+<h3>    <a href="4.html">4</a> &nbsp &nbsp &nbsp<a href="8.html">8</a></h3>
   </div>
 
   <div class="main">
-<h2>Code before refactoring</h2>
+<h2>Before Refactoring Code</h2>
  <br></br>
- <img src="4b.png"  alt="Pulpit rock" width="400" height="250" />
+ <img src="7b.png"  alt="Pulpit rock" width="400" height="140" />
   </div>
  <div class="med">
-  <h2>Code after refactoring</h2>
+  <h2>After Refactoring Code</h2>
  <br></br>
- <img src="4a.png"  alt="Pulpit rock" width="420" height="220" />
+ <img src="7a.png"  alt="Pulpit rock" width="400" height="140" />
       <br>
 </div>
  <div class="right">
-  <h2>Expected results</h2> 
+  <h2>Expected Refactoring Result</h2> 
  <br></br>
- <img src="4e.png"  alt="Pulpit rock" width="420" height="220" />
+<h3>A warning should be given that refactoring is not supported.</h3>
 	      <br>
 </div>
 <div class="footer">
-  <h3>Error messages provided by the compiler:</h3>
-<p> The constructor OriginalClass() is not visible.</p>
-  <h3>Explanation: </h3>
-<p>When the "methodUsingPrivateConstructor()" method is selected for the move method refactoring, it causes a refactoring bug because method being moved depends on the constructor method, resulting in a syntax error.</p>
-​<h3>Issue link: If the paper is accepted, we will provide all issue links (currently anonymous).    </h3>
+  <h3>Error Messages: </h3>
+  <p>The return type is incompatible with Object.hashCode().</p>
+  <h3>Error Reason Description: </h3>
+<p>When the "methodToBeRenamed" method is selected for the rename method refactoring, it causes a refactoring bug because the new method name being renamed conflicts with the method of existing APIs , resulting in a syntax error.</p>
+
 </div>
  </div>
 </body>

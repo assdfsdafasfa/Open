@@ -158,26 +158,26 @@ background-color: #333;
   </div>
 
   <div class="main">
-<h2>Before Refactoring Code</h2>
+<h2>Code before refactoring</h2>
  <br></br>
  <img src="1b.png"  alt="Pulpit rock" width="420" height="140" />
   </div>
  <div class="med">
-  <h2>After Refactoring Code</h2>
+  <h2>Code after refactoring</h2>
  <br></br>
  <img src="1a.png"  alt="Pulpit rock" width="420" height="170" />
       <br>
 </div>
  <div class="right">
-  <h2>Expected Refactoring Result</h2> 
+  <h2>Expected results</h2> 
  <br></br>
  <img src="1e.png"  alt="Pulpit rock" width="420" height="170" />
 	      <br>
 </div>
 <div class="footer">
-  <h3>Error Messages:</h3>
+  <h3>Error messages provided by the compiler:</h3>
 <p>The final field ExtractMethodTest.value cannot be assigned.</p>
-  <h3>Error Reason Description: </h3>
+  <h3>Explanation: </h3>
 <p>When the "this.value = value;" statement is selected for the Extract Method refactoring, setting the new method name to "extracted" causes a refactoring bug,  because the 'final' modifier field cannot be assigned, resulting in a syntax error.</p>
    <h3>Issue link: If the paper is accepted, we will provide all issue links (currently anonymous).  </h3>
 </div>

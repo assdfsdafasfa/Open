@@ -157,25 +157,26 @@ background-color: #333;
   </div>
 
   <div class="main">
-<h2>Before Refactoring Code</h2>
+<h2>Code before refactoring</h2>
  <br></br>
  <img src="10b.png"  alt="Pulpit rock" width="400" height="150" />
   </div>
  <div class="med">
-  <h2>After Refactoring Code</h2>
+  <h2>Code after refactoring </h2>
  <br></br>
  <img src="10a.png"  alt="Pulpit rock" width="400" height="150" />
       <br>
 </div>
  <div class="right">
-  <h2>Expected Refactoring Result</h2> 
+  <h2>Expected results</h2> 
  <br></br>
  <img src="10e.png"  alt="Pulpit rock" width="400" height="150" />
 	      <br>
 </div>
 <div class="footer">
-  <h3>Error Messages: no</h3>
-  <h3>Error Reason Description: </h3>
+  <h3>Error messages provided by the compiler: no</h3>
+  <h3>Explanation: </h3> In the "SomeService" class, the "methodToRename" is selected to be renamed, when the code was renamed, the "testCase3()" method in the "RenameMethodTest" class fetched the data based on the "methodToRename" method name, because the method is renamed and the string name in the "RenameMethodTest" class did not change, because the corresponding data could not be fetched, resulting in a change in code behavior. 
+ ​<h3>Issue link: If the paper is accepted, we will provide all issue links (currently anonymous).   </h3>
 </div>
  </div>
 </body>
