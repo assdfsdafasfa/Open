@@ -16,8 +16,9 @@ We provide a [Bug Repository](https://github.com/assdfsdafasfa/OpenPaper/tree/ma
 • IntelliJ IDEA, version 2024.1
 
 # How to run the approach
-Auto-perform refactoring tools in [Auto-RefactoringbyEclipse](https://github.com/assdfsdafasfa/OpenPaper/tree/main/Eclipse_AutoRefactor) and [Auto-RefactoringbyIDEA](https://github.com/assdfsdafasfa/OpenPaper/tree/main/IDEA_AutoRefactor) package.
+A tool that performs automated execution of refactoring by calling refactoring engines([Auto-RefactoringbyEclipse](https://github.com/assdfsdafasfa/OpenPaper/tree/main/Implementation/Eclipse_AutoRefactor) and [Auto-RefactoringbyIDEA](https://github.com/assdfsdafasfa/OpenPaper/tree/main/Implementation/IDEA_AutoRefactor)) API.
 
+We provide [prompts](https://github.com/assdfsdafasfa/OpenPaper/tree/main/Implementation/Prompt/Generator) designed for 7 types of refactoring.
 
 # Dataset
   **[Feature Library](https://github.com/assdfsdafasfa/OpenPaper/tree/main/Dataset/FeatureLibrary)** 
