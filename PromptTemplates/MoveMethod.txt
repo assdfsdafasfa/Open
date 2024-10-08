@@ -1,0 +1,10 @@
+Description:
+Please generate ten java programs that test the move method refactoring and meet the following constraints.
+Conditions:
+1. The original class of the method to be moved contains a field of the target class type.
+2. The name of the method to be moved is 'methodToBeMoved'.
+3. Th target class name for the method to be moved is 'TargetClass'.
+Features:
+1. The method to be moved calls a private field within the original class.
+2. The modifier of the method to be moved is 'protected'.
+3. The target class of the method to be moved is an anonymous class.

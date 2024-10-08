@@ -1,0 +1,7 @@
+Description:
+Please generate ten java programs that test the rename field refactoring and meet the following constraints.
+Conditions:
+1. The name of the field to be renamed is 'fieldToBeRenamed'.
+Features:
+1. defines a SourceClass with an integer field named fieldToBeRenamed.
+2. Implement a method in this class that takes an integer parameter and prints the value of fieldToBeRenamed.
