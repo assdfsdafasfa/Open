@@ -1,8 +1,4 @@
 Description:
 Please generate ten java programs that test the extract local variable refactoring and meet the following constraints.
 Conditions:
-1. The extracted code should be an expression statement.
-Features:
-1. Defines a class called OriginalClass with a method.
-2. Create a subclass named OtherClass that overrides a method.
-3. The method contains the 'super' keyword.
+[SELECTED FEATURES]

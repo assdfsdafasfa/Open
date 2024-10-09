@@ -3,5 +3,4 @@ Please generate ten java programs that test the rename local variable refactorin
 Conditions:
 1. The name of the variable to be renamed is 'variableToBeRenamed'.
 Features:
-1. defines a SourceClass with an integer field named field.
-2. Implement a method in this class that declares a local variable named variableToBeRenamed.
+[SELECTED FEATURES]

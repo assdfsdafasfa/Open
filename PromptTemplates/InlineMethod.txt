@@ -3,6 +3,4 @@ Please generate ten java programs that test the inline method refactoring and me
 Conditions:
 1. The name of the method to be inlined is 'methodToBeInlined'.
 Features:
-1. defines a SourceClass with a private boolean field named flag.
-2.  Implement a synchronized method called methodToBeInlined() that sets flag to true.
-3.  Create another method called calledMethod() that calls methodToBeInlined().
+[SELECTED FEATURES]

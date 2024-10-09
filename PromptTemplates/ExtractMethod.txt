@@ -3,6 +3,4 @@ Please generate ten java programs that test the extract method refactoring and m
 Conditions:
 1. The extracted code should be one or more statements.
 Features:
-1. defines a class called ExtractMethodTest with a private final integer field named value.
-2.  the constructor, extract the assignment of value into a separate private method. 
-3. The constructor should call this new method to set the value of the field.
+[SELECTED FEATURES]

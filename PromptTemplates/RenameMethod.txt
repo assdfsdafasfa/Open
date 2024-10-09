@@ -3,6 +3,4 @@ Please generate ten java programs that test the rename method refactoring and me
 Conditions:
 1. The name of the method to be renamed is 'methodToBeRenamed'.
 Features:
-1.  Defines a ParentClass with a method called method(). 
-2.  Create a SubClass that extends ParentClass and includes a method named methodToBeRenamed().
-3.  Implement a test in SubClass that calls the method() from ParentClass.
+[SELECTED FEATURES]
