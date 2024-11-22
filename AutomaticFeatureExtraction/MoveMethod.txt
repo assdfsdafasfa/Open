@@ -1,0 +1,20 @@
+You are an expert in testing refactoring engines. 
+Your task is to summarize what kind of features a test Java program should have so that it could trigger the same bug in 'move method refactoring' as the following test program trigger:
+Notably, "features" refer to code entities with specific characters as well as relationships among such entities. 
+The given test program that triggers a bug of move method refactoring : [Source Code]
+The error messages of move method refactoring: [error message] 
+
+To make it clear, we present the following three examples to illustrate how to extract different features that result in a bug during the move method refactoring process. 
+Example 1
+The given test program that triggers a bug of move method refactoring : [Source Code]
+The error messages of move method refactoring: [error message] 
+The summarized features: [Features]
+Example 2
+The given test program that triggers a bug of move method refactoring : [Source Code]
+The error messages of move method refactoring: [error message] 
+The summarized features: [Features]
+Example 3
+The given test program that triggers a bug of move method refactoring : [Source Code]
+The error messages of extract method refactoring: [error message] 
+The summarized features: [Features]
+
