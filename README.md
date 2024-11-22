@@ -1,8 +1,9 @@
 # ChatGPT-based Test Generation for Refactoring Engines Enhanced by  Feature Analysis on Examples
-# Count the number of different bug error reasons
-Table 1 classification results of bug error causes based on paper【[An Empirical Study of Refactoring Engine Bugs](https://arxiv.org/abs/2409.14610)】
+# Classification of defects 
+Table 1 Classification according to the reasons for defect (the reasons are defined by 9 in paper [An Empirical Study of Refactoring Engine Bugs](https://arxiv.org/abs/2409.14610))
 
-![image](https://github.com/user-attachments/assets/e96681e8-05ba-4b19-ad8c-4073378a4401)
+![image](https://github.com/user-attachments/assets/e070aa18-d140-4ffb-ba3d-ea3af4517048)
+
 # Bug list
 All bugs identified in the case study are explained in detail so that they could be validated by other researchers. The bug list is publicly available [here](https://assdfsdafasfa.github.io/). 
 
