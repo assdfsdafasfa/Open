@@ -6,15 +6,60 @@ The error messages of move method refactoring: [error message]
 
 To make it clear, we present the following three examples to illustrate how to extract different features that result in a bug during the move method refactoring process. 
 Example 1
-The given test program that triggers a bug of move method refactoring : [Source Code]
-The error messages of move method refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of move method refactoring : [public class A {
+  public void a() {
+    B b = new B();
+    b.foo();
+  }
+}
+public class B {
+  public void b() {
+    bar();
+    baz();
+  }
+  private void bar() {
+  }
+  private void baz() {
+  }
+}]
+The error messages of move method refactoring: [The error occurs because IDEA does not provide an option to move private methods along with the method being inlined, causing the private methods to remain inaccessible in the context where the method was inlined.] 
+The summarized features: [
+1. The program should have at least two classes.
+2. The source class should have a method that creates an instance of the target class. 
+3. Move a method body to call a private method in a class]
 Example 2
-The given test program that triggers a bug of move method refactoring : [Source Code]
-The error messages of move method refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of move method refactoring : [
+package org.come.movestatic;
+public class OriginalWithStatic {
+    public static void <caret>perform(String a) {
+    }
+    public static void perform(String a, boolean b) {
+    }
+}]
+The error messages of move method refactoring: [The StaticUsage class, which relies on the perform(String a) method, does not get its method calls updated correctly to point to the new location (StaticDestination). This results in either compilation errors or incorrect behavior.] 
+The summarized features: [
+1. The program should have at least two classes.
+2. The source class should contain static methods.
+3. The source class should have at least one method with a specific parameter type.
+4. The destination class should be available for the method to be moved to.
+5. The source class should have multiple overloaded static methods.]
 Example 3
-The given test program that triggers a bug of move method refactoring : [Source Code]
-The error messages of extract method refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of move method refactoring : [
+class Foo {
+    static void foo() {
+    }
+    static class Bar {
+        void foo() {
+            Foo.foo();
+        }
+    }
+}
+class Baz {
+}]
+The error messages of extract method refactoring: [The error occurs because the static method foo() is incorrectly moved to the Baz class instead of staying within the Foo class, and the method call within Bar becomes ambiguous.] 
+The summarized features: [
+1. The program should contain at least two classes.
+2. The source class should have a static method.
+3. There should be a nested static class within the source class.
+4. The nested class should contain a non-static method that calls the static method of the source class.]
 

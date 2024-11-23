@@ -6,15 +6,51 @@ The error messages of extract variable refactoring: [error message]
 
 To make it clear, we present the following three examples to illustrate how to extract different features that result in a bug during the extract variable refactoring process. 
 Example 1
-The given test program that triggers a bug of extract variable refactoring : [Source Code]
-The error messages of extract variable refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of extract variable refactoring : [
+public class A {
+	public static Object bar;
+
+	void foo() {
+		return new Object();
+	}
+}  
+The error messages of extract variable refactoring: [The error occurs because the result of new Object() is a temporary value,  leading to incorrect or redundant code. ] 
+The summarized features: [
+1. The class contains a static field of type Object that is not used within the method.
+2. The method contains a return statement that creates and returns a new instance of a class. However, the return type is missing in the method signature, which causes a compilation error.
+3. A static field is declared but not used anywhere in the method or class, potentially leading to an unnecessary declaration.]
 Example 2
-The given test program that triggers a bug of extract variable refactoring : [Source Code]
-The error messages of extract variable refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of extract variable refactoring : [class A {
+	int field= 17;
+	void run() {
+		System.out.println(this.field);
+	}
+} ]
+The error messages of extract variable refactoring: [The error occurs because extracting this.field into a new variable is unnecessary, as this.field already references an instance variable, leading to redundant or incorrect refactoring.] 
+The summarized features: [
+1. The class contains an integer field that is initialized with a constant value.
+2. A method exists that prints the value of the instance field to the console.
+3. The method uses the 'this' keyword to access the field, making it explicit that the field belongs to the current object.
+4. The method is designed to output the value of the field when invoked.
+5. The 'this' keyword is used to refer to the current instance of the class, although it could be omitted in this case.]
 Example 3
-The given test program that triggers a bug of extract variable refactoring : [Source Code]
-The error messages of extract variable refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of extract variable refactoring : [
+class Example  {
+    void foo(int value) {
+        class Local {
+            void bar() {
+                Runnable runnable = () -> {
+                    System.out.println(value);
+                };
+            }
+        }
+    }
+}]
+The error messages of extract variable refactoring: [The error occurs because the refactoring introduces an unnecessary parameter when extracting the method, as the value is already in scope within the new method, making the parameter redundant.] 
+The summarized features: [
+1. An inner class is defined within a method, encapsulating certain behavior.
+2. A lambda expression is used within the method, referencing a variable from the enclosing scope.
+3. The lambda captures and utilizes a variable from the method's scope, demonstrating how inner methods can access variables from their enclosing context.
+4. The lambda is assigned to a variable of a functional interface type, allowing delayed execution of the logic it encapsulates.]
+
 

@@ -6,15 +6,43 @@ The error messages of extract method refactoring: [error message]
 
 To make it clear, we present the following three examples to illustrate how to extract different features that result in a bug during the extract method refactoring process. 
 Example 1
-The given test program that triggers a bug of extract method refactoring : [Source Code]
-The error messages of extract method refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of extract method refactoring : [
+public class SeparateInit {
+    public void context1() {
+        int v;
+        v = 4;
+    }
+    public void context2() {
+        int v;
+        v = 4;
+    }
+}]
+The error messages of extract method refactoring: [The refactoring engine failed to detect duplicate code elements during the execution of the "Extract Method" refactoring.] 
+The summarized features: [
+1. The class should define two separate methods.
+2. Two methods contain the same method body.
+3. The extracted statement is an assignment expression. ]
 Example 2
-The given test program that triggers a bug of extract method refactoring : [Source Code]
-The error messages of extract method refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of extract method refactoring : [
+public <T> T method(Class<T> clazz) {
+    System.out.println();
+    return null;
+}
+]
+The error messages of extract method refactoring: [Te extracted method incorrectly retains the generic type <T> in its declaration, even though it does not use the generic parameter. ] 
+The summarized features: [
+1. The method is declared with a generic type parameter <T> and includes a return type dependent on the generic parameter.
+2. The code contains a simple statement eligible for method extraction.
+3. The extracted statement oes not depend on or interact with the generic type <T>.]
 Example 3
-The given test program that triggers a bug of extract method refactoring : [Source Code]
-The error messages of extract method refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of extract method refactoring : [
+class ExtractMethBug {
+    void meth() {
+        String name;
+    }
+}]
+The error messages of extract method refactoring: [The extracted method is incorrectly declared to return a String but does not return anything, resulting in a compilation error.] 
+The summarized features: [1. The class defines a single method.
+2. The method contains a single uninitialized variable declaration.
+3. The extracted code consists of a variable declaration statement.]
 

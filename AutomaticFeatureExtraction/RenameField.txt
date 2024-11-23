@@ -6,15 +6,51 @@ The error messages of rename field refactoring: [error message]
 
 To make it clear, we present the following three examples to illustrate how to extract different features that result in a bug during the rename field refactoring process. 
 Example 1
-The given test program that triggers a bug of rename field refactoring : [Source Code]
-The error messages of rename field refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of rename field refactoring : [public class Hider3 {
+    private int myField = 7;
+    private class InnerClass {
+        public void instanceContext(int param3) {
+            int localVar3 = 0;
+            int var1 = localVar3 + param3 + myField;
+        }
+    }
+}]
+The error messages of rename field refactoring: [ when renaming the field myField to param3 or localVar3, the refactoring incorrectly resolves the reference to this.param3 or this.localVar3 within the InnerClass.] 
+The summarized features: [
+1. Rename a field class that contains an inner class
+2. Inner classes contain local variables
+3. An assignment statement includes renaming fields and assigning local variables]
 Example 2
-The given test program that triggers a bug of rename field refactoring : [Source Code]
-The error messages of rename field refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of rename field refactoring : [public class Foo {
+    public int x;
+    public void foo() {
+        int y = 0;
+        y = x + 1;
+    }
+    public class Inner {
+        public int z;
+        public void foo() {
+            z = x + 1;
+        }
+    }
+}
+]
+The error messages of rename field refactoring: [The error occurs due to a naming conflict between the field isEnabled and the constructor parameter isEnabled, which causes the constructor to incorrectly assign the parameter to itself instead of the field.] 
+The summarized features: [
+1. Rename a field class that contains an inner class
+2. The inner class contains additional field declarations
+3. An assignment statement in the inner class that contains the renamed field and the declared field in the inner class]
 Example 3
-The given test program that triggers a bug of rename field refactoring : [Source Code]
-The error messages of rename field refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of rename field refactoring : [public class Bean {
+    private boolean isVisible;
+    public Bean(boolean visible) {
+        isVisible = visible;
+    }
+}]
+The error messages of rename field refactoring: [
+The error occurs due to a naming conflict between the field isEnabled and the constructor parameter isEnabled, which causes the constructor to incorrectly assign the parameter to itself instead of the field.] 
+The summarized features: [
+1. A class contains 'private' renamed field. 
+2. A statement that contains a parameter assigned to the renamed field. 
+3. The class contains construction method]
 

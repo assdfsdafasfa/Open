@@ -6,15 +6,58 @@ The error messages of rename method refactoring: [error message]
 
 To make it clear, we present the following three examples to illustrate how to extract different features that result in a bug during the rename method refactoring process. 
 Example 1
-The given test program that triggers a bug of rename method refactoring : [Source Code]
-The error messages of rename method refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of rename method refactoring : [public class A {
+	public void m(Object o) {}
+	void n() {
+		m("abc");
+	}
+}
+public class B extends A {
+	void n(Object o) {}
+}]
+The error messages of rename method refactoring: [Renaming n in B to m causes an error since visibility of m cannot be reduced in subclass.] 
+The summarized features: [
+1. The parent class contains inner classes and interfaces that define functionality or contract for subclasses.
+2. Subclasses include inner classes that implement interfaces defined in the parent class or elsewhere.
+3. When renaming the method name of the inner class in the subclass, it may affect the interface implementation or contract, potentially requiring updates in the method signature or implementation.]
 Example 2
-The given test program that triggers a bug of rename method refactoring : [Source Code]
-The error messages of rename method refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of rename method refactoring : [
+abstract class C<T> {
+    // RENAME THIS METHOD (this method will be renamed)
+    protected abstract boolean m(T a);
+}
+public abstract class RenameMethod<T extends Object> extends C<T> {
+    // RENAME THIS METHOD (this method will not be renamed)
+    @Override
+    protected abstract boolean m(Object a);
+}]
+The error messages of rename method refactoring: [The method in the subclass is not renamed when the superclass method uses a generic type, causing a compilation error in the subclass if the method is overridden without proper @Override annotation.] 
+The summarized features: [
+1. The superclass defines a method with a generic type.
+2. The subclass overrides the method, but it changes the method signature to use a non-generic type.
+3. Renaming the method in the superclass does not automatically rename the overridden method in the subclass, especially when the method involves generics. This leads to mismatched method signatures and compilation errors.]
 Example 3
-The given test program that triggers a bug of rename method refactoring : [Source Code]
-The error messages of rename method refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of rename method refactoring : [
+class RenameMethodBug1 extends C3 {
+    class A extends C<Object> implements I1<Object> {
+        // Invoke "Rename" on 'f'
+        public void f(Object o) {
+        } }
+}
+class C3 {
+    class C<E> { // <<< This type parameter has to be different from
+                 // the one in Interface I1
+        public void f(E e) {
+        }
+    }
+}
+interface I1<T> {
+    void f(T t);
+}]
+The error messages of rename method refactoring: [
+The error occurs because renaming the method in the subclass causes a mismatch in method signatures due to conflicting generic type parameters between the parent class and the interface, resulting in a compilation error.] 
+The summarized features: [
+1. The method in the parent class uses a generic type parameter.
+2. The interface also defines a generic method, but the type parameter is different from the one in the parent class.
+3. The subclass implements the interface, and when attempting to rename the method.]
 

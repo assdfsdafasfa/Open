@@ -6,15 +6,64 @@ The error messages of rename variable refactoring: [error message]
 
 To make it clear, we present the following three examples to illustrate how to extract different features that result in a bug during the rename variable refactoring process. 
 Example 1
-The given test program that triggers a bug of rename variable refactoring : [Source Code]
-The error messages of rename variable refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of rename variable refactoring : [public class A {
+    Thread m() {
+        final int x = 42;
+        return new Thread() {
+            int y = 23;
+            public void run() {
+                System.out.println(x);
+            }
+        };
+    }
+    public static void main(String[] args) {
+        new A().m().start();
+    }
+}]
+The error messages of rename variable refactoring: [The error occurs because the refactoring engine incorrectly renames a local variable to a field name in an anonymous class, causing a scoping issue and incorrect behavior in the program.] 
+The summarized features: [
+1.Methods contain renamed variables and anonymous inner classes
+2. Anonymous inner class as return value
+3. Anonymous inner classes call local variables
+4. Anonymous inner classes contain field declarations
+5. Variables are renamed to field names in anonymous inner classes]
 Example 2
-The given test program that triggers a bug of rename variable refactoring : [Source Code]
-The error messages of rename variable refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of rename variable refactoring : [
+class SuperClass {
+    public String getFoo() {
+        return "SuperClass.getFoo";
+    }
+}
+class SubClass extends SuperClass{
+    private String bar;
+    public void setBar(String bar) {
+        this.bar = bar;
+    }
+    public String getBar() {
+        return bar;
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        SubClass test = new SubClass();
+        System.out.print(test.getFoo());
+    }
+}]
+The error messages of rename variable refactoring: [User does 'rename' on SubClass.bar, changes it to 'Foo' and chooses 'rename getters/setters' option. After that, Test.main() calls a different method, than it called before. That's not always what user wants. So user should be warned, if after the refactoring, getters/setters start overriding superclass methods.] 
+The summarized features: [
+1. Subclasses that inherit from the parent class contain renamed fields
+2. Subclasses contain getter and setter methods for renamed fields
+3. The subclass calls the method in the parent class]
 Example 3
-The given test program that triggers a bug of rename variable refactoring : [Source Code]
-The error messages of rename variable refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of rename variable refactoring : [
+class Foo {
+  int bar0;
+  void setBar(int bar) {
+     bar0 = bar;
+  }]
+The error messages of rename variable refactoring: [Another name shadows access to the renamed element] 
+The summarized features: [
+1. A class is defined with a member variable to hold an integer value.
+2. A method is provided to set the value of the member variable.
+3. The method takes an integer parameter and assigns it to the member variable, allowing for controlled modification of its state.]
 

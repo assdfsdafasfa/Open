@@ -6,15 +6,61 @@ The error messages of inline method refactoring: [error message]
 
 To make it clear, we present the following three examples to illustrate how to extract different features that result in a bug during the inline method refactoring process. 
 Example 1
-The given test program that triggers a bug of inline method refactoring : [Source Code]
-The error messages of inline method refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of inline method refactoring : [
+public class A {
+  public void a() {
+    B b = new B();
+    b.foo();
+  }
+}
+public class B {
+  public void b() {
+    bar();
+    baz();
+  }
+  private void bar() {
+  }
+  private void baz() {
+    ..
+  }
+}]
+The error messages of inline method refactoring: [The error occurs because when inlining a method that calls private methods, the private methods are not automatically moved or made accessible, resulting in a lack of flexibility in the refactoring process.] 
+The summarized features: [
+1. Inlining a method does not automatically handle dependencies on private methods used exclusively within that method.
+2. The refactoring tool does not provide options for adjusting the access level of private methods or moving them as needed when inlining.
+3. The inlined code requires modifications in the class structure, such as moving methods, which is not fully supported in the current process.]
 Example 2
-The given test program that triggers a bug of inline method refactoring : [Source Code]
-The error messages of inline method refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of inline method refactoring : [
+ void foo() throws Exception {
+        int m = bar();
+        new Object() {
+            void func() {
+                int n = m; //inline m
+            }
+        };
+    }
+    int bar() throws Exception {
+        return 1;
+    }
+]
+The error messages of inline method refactoring: [The error occurs because when inlining a variable, the exception handling from the outer method is not automatically propagated to the inner method, resulting in a compilation error. The inner method lacks the necessary exception declaration, which leads to a mismatch in exception handling.] 
+The summarized features: [
+1. Inlining of a variable into an inner method without adjusting the exception handling leads to compilation issues.
+2. The throws clause of the outer method is not automatically added to the inner method, causing an exception handling conflict.
+3. The inner method must explicitly declare any exceptions it might throw, which is not handled during the inlining process.]
 Example 3
-The given test program that triggers a bug of inline method refactoring : [Source Code]
-The error messages of inline method refactoring: [error message] 
-The summarized features: [Features]
+The given test program that triggers a bug of inline method refactoring : [
+class X {
+  String string() {
+    return "heavy" + “ " + "metal";
+  }
+  String x() {
+    " " + string() + " "
+  }
+}]
+The error messages of inline method refactoring: [The issue arises when attempting to inline a method that performs string concatenation. The inlining process incorrectly handles the concatenation, resulting in an improper replacement in the method where the inlined content is inserted.] 
+The summarized features: [
+1. The method is inlined into the calling method.
+2.  The inlined method involves string concatenation that should be preserved.
+3. The inlining process incorrectly handles the string concatenation, leading to an incorrect final expression in the calling method.]
 
